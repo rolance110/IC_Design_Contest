@@ -1,0 +1,70 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : CONV
+Version: P-2019.03
+Date   : Sat Sep 30 14:27:08 2023
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: cdata_rd[1]
+              (input port clocked by clk)
+  Endpoint: cdata_wr_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  CONV               tsmc13_wl10           slow
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  input external delay                     5.00       5.50 r
+  cdata_rd[1] (in)                         0.04       5.54 r
+  U415/Y (NAND2XL)                         0.15       5.69 f
+  U1209/Y (AOI2BB2X1)                      0.32       6.01 r
+  U1211/Y (OAI22X1)                        0.21       6.23 f
+  U945/Y (OAI21X1)                         0.23       6.46 r
+  U484/Y (NAND2BX2)                        0.16       6.62 f
+  U1213/Y (AOI21X4)                        0.13       6.75 r
+  U1214/Y (OAI22X1)                        0.15       6.90 f
+  U1215/Y (OAI2BB1X4)                      0.21       7.12 f
+  U481/Y (AND2X6)                          0.17       7.28 f
+  U1217/Y (OAI22X4)                        0.12       7.40 r
+  U1218/Y (OAI21X4)                        0.11       7.51 f
+  U1220/Y (AOI21X2)                        0.17       7.68 r
+  U737/Y (AOI211X1)                        0.18       7.86 f
+  U1222/Y (OAI22X4)                        0.19       8.05 r
+  U1223/Y (OAI21X4)                        0.12       8.17 f
+  U1224/Y (OAI2BB1X4)                      0.09       8.26 r
+  U577/Y (NAND3X4)                         0.09       8.35 f
+  U1225/Y (OAI21X4)                        0.56       8.92 r
+  U448/Y (NOR2X6)                          0.17       9.09 f
+  U1229/Y (BUFX20)                         0.20       9.29 f
+  U906/Y (AOI222XL)                        0.67       9.96 r
+  U496/Y (INVX1)                           0.20      10.16 f
+  cdata_wr_reg[0]/D (DFFRX1)               0.00      10.16 f
+  data arrival time                                  10.16
+
+  clock clk (rise edge)                   10.00      10.00
+  clock network delay (ideal)              0.50      10.50
+  clock uncertainty                       -0.10      10.40
+  cdata_wr_reg[0]/CK (DFFRX1)              0.00      10.40 r
+  library setup time                      -0.24      10.16
+  data required time                                 10.16
+  -----------------------------------------------------------
+  data required time                                 10.16
+  data arrival time                                 -10.16
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+1
